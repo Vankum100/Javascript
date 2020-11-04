@@ -191,14 +191,79 @@ console.log(staticUser);
 
 
 
-//________ ES6 MODULES and WEBPACK BUNDLER   __________________________________________________///
-
-import TaskCollection from './TaskCollection';
 
 
-new TaskCollection([
-    'Go to the store',
-    'Finish screencast',
-    'Eact cake']
-).dump();
+//________ PROMISES 101 __________________________________________________///
 
+// .then() only works when resolve() is explicitly called
+
+var timer = function(waitTime){
+    return new Promise( function( resolve, reject){
+        console.log('Init Promise');
+        setTimeout(function(){
+            console.log('Timeout done.');
+            resolve();
+        }, waitTime);
+    }  );
+};
+
+timer(4000).then(function () {
+    console.log('Proceed now that timer has concluded.');
+});
+
+//________ USEFUL STRING ADDITIONS __________________________________________________///
+
+// avoiding indexof('something') == -1
+
+let title = 'new javascript concepts are a must learn for everyone';
+
+if(title.includes('javascript')){
+    console.log('the book has javascript in its title');
+}
+
+if(title.startsWith('new')){
+    console.log('The word new is in the title');
+}
+
+if(title.endsWith('everyone')){
+    console.log('everyone is the last word of the title');
+}
+
+let laughter = 'ha';
+console.log(laughter.repeat(4)); // hahahaha
+
+//________ ARRAY FIND and FINDINDEX __________________________________________________///
+
+// finds the first item that is greater than 5
+console.log(
+    ['9','4','6','8','10','11'].find( item => item > 5)
+); // 6
+
+/// _________ GENERATORS ______________________________________//
+
+// functions that can be called incrementally
+// you call the function, pause at a particular yield
+// the state is actually remembered
+function * range(start, end){
+
+    while( start <= end){
+        yield start;
+
+        start++;
+    }
+}
+/// using SPREAD operator on generator
+console.log(
+    [...range(1,5)]
+); // [1,2,3,4,5]
+
+
+/// _________ SETS  ______________________________________//
+
+// collection of unique values
+
+let tags = ['php', 'javascript', 'node','vue', 'vue', 'node'];
+
+let set  = new Set(tags);
+
+console.log(set); // ['php', 'javascript', 'node','vue']

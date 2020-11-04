@@ -2,9 +2,9 @@ var webpack = require('webpack');
 
 module.exports = {
 
-    entry: './src/main.js',
+    entry: './src/TaskModule.js',
     output: {
-        filename: './output/main.js'
+        filename: './output/taskbundled.js'
     }
 
     

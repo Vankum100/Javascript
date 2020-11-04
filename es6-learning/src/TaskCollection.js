@@ -4,7 +4,7 @@ class TaskCollection{
     }
 
     dump(){
-        console,log(this.tasks);
+        console.log(this.tasks);
     }
 }
 
