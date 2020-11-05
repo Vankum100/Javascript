@@ -2,15 +2,19 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(range);
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //_______ VAR , LET , CONST  _____________________________________________///
 
 // Use var at the top level
 // Default to using let
-// Use const when dont want reassignment of variable
+// Use const when you don't want reassignment of variable
 
-// remember const receive more values 
+// remember const can receive more values 
 // if its an array
 
 var months = ['January', 'february'];
@@ -21,7 +25,11 @@ months.push('March');
 
 // when no params then 
 // () => return statement
+
+// when one param then
 // para => return statement
+
+// wehn multiple params then
 // (para1,para2) => return statement
 
 var names = ['Taylor', 'Ivan', 'John', 'Adam', 'Jane'];
@@ -36,11 +44,11 @@ console.log(names);
 
 // the default values can be both function calls as well as primitive values
 
-// here the default discount is a call to 
+// here the default discount value is a call to 
 // defaultDiscountRate() function
 
 function defaultDiscountRate() {
-    return .10;
+    return 0.1; // 10%
 }
 
 function applyDiscount(cost) {
@@ -175,7 +183,7 @@ var UserClass = function () {
         this.email = email;
     }
 
-    // Behind the scenes, this is added to the User prototype
+    // Behind the scenes, this is added to the UserClass function prototype
 
     _createClass(UserClass, [{
         key: 'changeEmail',
@@ -227,6 +235,81 @@ var timer = function timer(waitTime) {
     });
 };
 
-timer.then(function () {
+timer(4000).then(function () {
     console.log('Proceed now that timer has concluded.');
 });
+
+//________ USEFUL STRING ADDITIONS __________________________________________________///
+
+// avoiding indexof('something') == -1
+
+var title = 'new javascript concepts are a must learn for everyone';
+
+if (title.includes('javascript')) {
+    console.log('the book has javascript in its title');
+}
+
+if (title.startsWith('new')) {
+    console.log('The word new is at the start of the title');
+}
+
+if (title.endsWith('everyone')) {
+    console.log('everyone is the last word of the title');
+}
+
+var laughter = 'ha';
+console.log(laughter.repeat(4)); // hahahaha
+
+//________ ARRAY FIND and FINDINDEX __________________________________________________///
+
+// findIndex() returns of the element found
+// find() returns the first elt that meets the criteria 
+// finds the first item that is greater than 5
+console.log(['9', '4', '6', '8', '10', '11'].find(function (item) {
+    return item > 5;
+})); // 6
+
+/// _________ GENERATORS ___________________________________________________________///
+
+// functions that can be called incrementally
+// you call the function, pause at a particular yield
+// the state is actually remembered
+function range(start, end) {
+    return regeneratorRuntime.wrap(function range$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    if (!(start <= end)) {
+                        _context.next = 6;
+                        break;
+                    }
+
+                    _context.next = 3;
+                    return start;
+
+                case 3:
+
+                    start++;
+                    _context.next = 0;
+                    break;
+
+                case 6:
+                case 'end':
+                    return _context.stop();
+            }
+        }
+    }, _marked, this);
+}
+/// using SPREAD operator on generator
+console.log([].concat(_toConsumableArray(range(1, 5)))); // [1,2,3,4,5]
+
+
+/// _________ SETS  ________________________________________________________________///
+
+// collection of unique values
+
+var tags = ['php', 'javascript', 'node', 'vue', 'vue', 'node'];
+
+var set = new Set(tags);
+
+console.log(set); // ['php', 'javascript', 'node','vue']

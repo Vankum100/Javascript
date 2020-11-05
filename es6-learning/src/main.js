@@ -1,3 +1,4 @@
+
 //_______ VAR , LET , CONST  _____________________________________________///
 
 // Use var at the top level
@@ -38,7 +39,7 @@ console.log(names);
 // defaultDiscountRate() function
 
 function defaultDiscountRate(){
-    return .10;
+    return 0.1; // 10%
 }
 
 function applyDiscount(cost, discount = defaultDiscountRate()){
@@ -102,7 +103,7 @@ function getPerson(){
     };
 }
 
-console.log(getPerson().name) // John
+console.log(getPerson().name);// John
 console.log(getPerson().greet()); // Hello,John
 
 // Object destruction 
@@ -148,7 +149,7 @@ function User(username,email)
 
 User.prototype.changeEmail = function (newEmail){
     this.email = newEmail;
-}
+};
 
 var user = new User('Ivan', 'example@mail.ru');
 
