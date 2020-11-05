@@ -2,9 +2,9 @@
 
 // Use var at the top level
 // Default to using let
-// Use const when dont want reassignment of variable
+// Use const when you don't want reassignment of variable
 
-// remember const receive more values 
+// remember const can receive more values 
 // if its an array
 
 const months = ['January', 'february'];
@@ -15,7 +15,11 @@ months.push('March');
 
 // when no params then 
 // () => return statement
+
+// when one param then
 // para => return statement
+
+// wehn multiple params then
 // (para1,para2) => return statement
 
 let names = ['Taylor','Ivan', 'John', 'Adam', 'Jane'];
@@ -30,7 +34,7 @@ console.log(names);
 
 // the default values can be both function calls as well as primitive values
 
-// here the default discount is a call to 
+// here the default discount value is a call to 
 // defaultDiscountRate() function
 
 function defaultDiscountRate(){
@@ -161,7 +165,7 @@ class UserClass {
         this.email = email;
     }
 
-    // Behind the scenes, this is added to the User prototype
+    // Behind the scenes, this is added to the UserClass function prototype
 
     changeEmail(newEmail){
         this.email = newEmail;
@@ -222,7 +226,7 @@ if(title.includes('javascript')){
 }
 
 if(title.startsWith('new')){
-    console.log('The word new is in the title');
+    console.log('The word new is at the start of the title');
 }
 
 if(title.endsWith('everyone')){
@@ -234,12 +238,14 @@ console.log(laughter.repeat(4)); // hahahaha
 
 //________ ARRAY FIND and FINDINDEX __________________________________________________///
 
+// findIndex() returns of the element found
+// find() returns the first elt that meets the criteria 
 // finds the first item that is greater than 5
 console.log(
     ['9','4','6','8','10','11'].find( item => item > 5)
 ); // 6
 
-/// _________ GENERATORS ______________________________________//
+/// _________ GENERATORS ___________________________________________________________///
 
 // functions that can be called incrementally
 // you call the function, pause at a particular yield
@@ -258,7 +264,7 @@ console.log(
 ); // [1,2,3,4,5]
 
 
-/// _________ SETS  ______________________________________//
+/// _________ SETS  ________________________________________________________________///
 
 // collection of unique values
 
