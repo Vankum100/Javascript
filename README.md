@@ -637,3 +637,31 @@ process.nextTick(() => {
 'use strict';
 ```
 
+
+## Features
+
+***If snippets do not show up, add the following to your settings file***
+
+```json
+    "emmet.includeLanguages": {
+        "ejs": "html",
+    },
+```
+
+** ejs Snippets are found below.**
+
+→ Denotes the `TAB` key.
+
+| Snippet→   | Alternate  | Output                                                                                                  |
+| ---------- | --------   | ------------------------------------------------------------------------------------------------------- |
+| `ejs→`     | `<%`       | `<% %>` - No output tag                                                                                 |
+| `ejsout→`  | `<%=`      | `<%= %>` - Outputs HTML value                                                                           |
+| `ejsesc→`  | `<%-`      | `<%- %>` - Outputs unescaped                                                                            |
+| `ejscom→`  | `<%#`      | `<%# %>` - Comment tag                                                                                  |
+| `ejslit→`  | `<%%`      | `<%% %>` - Outputs Literal <%                                                                           |
+| `ejsinc→`  | `<%`       | `include` statement                                                                                       |
+| `ejsfor→`  | `<%`       | `for` Javascript Loop                                                                                             |
+| `ejseach→` | `<%`       | `forEach` Javascript Loop                                                                                     |
+| `ejsif→`   | `<%`       | `if` Statement with condition                                                                                     |
+| `ejselif→` | `<%`       | `else if` Statement - *Middle section only.* Assumes you have already written the first `if` statement. |
+| `ejselse→` | `<%`       | `else` Statement - *Middle section only.* Assumes you have already written the first `if` statement.    |
